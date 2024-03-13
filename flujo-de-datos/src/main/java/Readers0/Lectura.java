@@ -1,5 +1,6 @@
 package Readers0;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.logging.Level;
@@ -34,6 +35,14 @@ public class Lectura {
 		//System.out.println();
 		ps.println("hola");
 		ps.printf("las veces que yaz fue gila fue: %d",500);
+		
+		File archivo = new File("error.log");
+		
+		PrintStream error= new PrintStream();
+		
+		System.setErr(error);
+		
+		System.out.println("Error:");
 	}
 	
 	
