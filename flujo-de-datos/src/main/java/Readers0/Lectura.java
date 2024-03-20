@@ -1,6 +1,8 @@
 package Readers0;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.logging.Level;
@@ -10,6 +12,7 @@ public class Lectura {
 	PrintStream ps;
 	public Lectura()
 	{
+		
 		ps = new PrintStream(System.out);
 		System.out.println("Byte:");
 		//Scanner s = new Scanner(System.in);
@@ -34,18 +37,46 @@ public class Lectura {
 		
 		//System.out.println();
 		ps.println("hola");
-		ps.printf("las veces que yaz fue gila fue: %d",500);
+		ps.printf("las veces que yaz fue gila fue: %d \n",500);
 		
 		File archivo = new File("error.log");
 		
-		PrintStream error= new PrintStream();
+		//crea un canal de comunicaciones de salida, Destino: archivo(file)
+		
+		FileOutputStream fos = null;
+		try {
+			fos = new FileOutputStream(archivo);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//                               destino,append
+		PrintStream error= new PrintStream(fos, true);
 		
 		System.setErr(error);
 		
-		System.out.println("Error:");
 	}
 	
 	
+	
+	
+	public String entradaDeDatos(){
+		try {
+			int Byte = -1;
+			String cadena = "";
+		while( (Byte = System.in.read())!= '\n' )
+		{
+			if(Byte != 13) 
+			cadena+=(char)Byte;
+			
+		}
+
+		System.out.print(cadena);
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+		return "";
+	}
 }
 
 
