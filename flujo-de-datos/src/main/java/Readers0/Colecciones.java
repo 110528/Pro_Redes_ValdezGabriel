@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Iterator;
 
 public class Colecciones {
 
@@ -36,29 +37,57 @@ public class Colecciones {
 		
 		HashSet<String> claves = new HashSet<>();
 		Set<Integer> DNI = new HashSet<>();
-		
+
 		public void Array() {
 			frutas.add("");
 			verduras.add(5);
 			verduras.add("s");
+
+			frutas.clear(); // Vacia por completo
+			frutas.remove(5); // Lo que este en la posicion 5
+			frutas.remove("manzana"); // Busca y borra ese dato en particular
+
+			verduras.contains("tomate");// existe?
+			verduras.containsAll(new ArrayList<>());
+
+			frutas.get(5); // devuelve lo que esta en la posicion que nosotros le digamos
+			frutas.indexOf("banana"); // busca banana y devuelve la posicion
+
+			verduras.isEmpty();// tiene algo o no
+			verduras.size();// cantidad de elementos que tiene la lista
+			Object[] ver = verduras.toArray();
+
+		}
+
+		public void Recorridos() {
+			// FOR normal
+			for (int i = 0; i <= frutas.size(); i++) {
+				frutas.get(i);
+			}
+
+			// FOR EACH
+			for (String item : frutas) {
+				System.out.println(item);
+			}
+
+			Iterator it = frutas.iterator();
+			while (it.hasNext()) 
+			{
+				it.remove();
+				it.next();
+			}
 			
-			frutas.clear(); //Vacia por completo
-			frutas.remove(5); //Lo que este en la posicion 5
-			frutas.remove("manzana"); //Busca y borra ese dato en particular
 			
-			verduras.contains("tomate");//existe?
-			verduras.containsAll(new ArrayList<>() );
+			///////////maps y sets
 			
-			frutas.get(5);
-			frutas.indexOf("banana");
+			// map (k,v)
 			
-			verduras.isEmpty();
-			verduras.size();
-			
-			
-			
+			for (String traduccion : españolRAE.keySet()) {
+
+			}
+			for (String traduccion : españolRAE.values()) {
+
+			}
 			
 		}
-		
-		
-}
+	}
