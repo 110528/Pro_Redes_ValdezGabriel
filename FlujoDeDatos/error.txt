@@ -1,0 +1,3 @@
+0 / 0 = error Division incorrecta
+6 / 0 = error Division incorrecta
+0 / 0 = error Division incorrecta
