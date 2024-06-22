@@ -28,7 +28,7 @@ public class Ejercicios {
             ps.println("ingrese un número válido: " + e.getMessage());
         }
 
-        String fileName = "NoVolatil.txt";
+        String fileName = "No-Volatil.txt";
         try (FileWriter fileWriter = new FileWriter(fileName)) {
             for (int i = 0; i < v1.length; i++) {
                 fileWriter.write(v1[i] + "\n");
