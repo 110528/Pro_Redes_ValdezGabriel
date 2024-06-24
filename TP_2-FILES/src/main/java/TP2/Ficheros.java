@@ -19,7 +19,7 @@ public class Ficheros {
 		
 	{	try {
 			ps = new PrintStream ( new FileOutputStream("inventarioo.dat" , true) );
-			
+			Ficheros.ps.close();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

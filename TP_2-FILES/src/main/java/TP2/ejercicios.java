@@ -19,7 +19,7 @@ public class ejercicios {
 		boolean entradaValida = false;
 
 		while (!entradaValida) {
-			ps.println("Ingrese una opción:");
+			ps.println(Utils.ANSI_PURPLE + "Ingrese una opción:"+Utils.ANSI_RESET);
 			try {
 				String input = reader.readLine();
 				op = Integer.parseInt(input);
@@ -27,10 +27,10 @@ public class ejercicios {
 				if (op >= 0) {
 					entradaValida = true;
 				} else {
-					ps.println("Error: ingrese un número entero positivo.");
+					ps.println(Utils.ANSI_RED_BOLD + "Error: ingrese un número entero positivo." + Utils.ANSI_RESET);
 				}
 			} catch (NumberFormatException | IOException e) {
-				ps.println("Error: ingrese un número entero válido.");
+				ps.println(Utils.ANSI_RED_BOLD + "Error: ingrese un número entero válido." + Utils.ANSI_RESET);
 			}
 		}
 
@@ -85,7 +85,7 @@ public class ejercicios {
 	    }  
 	        
 	 static float ej4Float() {
-	        ps.println("Ingrese texto (con valor numerico con coma)");
+	        ps.println("Ingrese texto con coma");
 	        String texto = ej2();
 	
 	        float nroFloat = Float.parseFloat(texto);
@@ -120,10 +120,10 @@ public class ejercicios {
 	 
 	 
 	
-		 	Ficheros.ps.println("Nombre del producto: " + nombre);
-	        Ficheros.ps.println("Precio de compra: " + pcompra);
-	        Ficheros.ps.println("Precio de venta: " + pventa);
-	        Ficheros.ps.println("Stock: " + cant_stock);
+		 	Ficheros.ps.println(Utils.ANSI_CYAN + "Nombre del producto: "+ Utils.ANSI_RESET + nombre);
+	        Ficheros.ps.println(Utils.ANSI_CYAN + "Precio de compra: "+ Utils.ANSI_RESET + pcompra);
+	        Ficheros.ps.println(Utils.ANSI_CYAN + "Precio de venta: "+ Utils.ANSI_RESET + pventa);
+	        Ficheros.ps.println(Utils.ANSI_CYAN + "Stock: "+ Utils.ANSI_RESET + cant_stock);
 	        Ficheros.ps.println();
 	        Ficheros.ps.flush();
 	        //ps.close();

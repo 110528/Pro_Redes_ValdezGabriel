@@ -18,29 +18,29 @@ public class Main {
 		Ficheros ficheros = new Ficheros();
 
 		while (continuar) { 
-			ps.println("MENU\n");
-			ps.println("1 - Agregar producto");
-			ps.println("2 - Mostrar produco");
-			ps.println("3 - Salir\n");
+			ps.println(Utils.ANSI_GREEN_BOLD + "MENU" + Utils.ANSI_RESET);
+			ps.println(Utils.ANSI_YELLOW_BOLD + "1 - Agregar producto" + Utils.ANSI_RESET);
+			ps.println(Utils.ANSI_YELLOW_BOLD + "2 - Mostrar productos" + Utils.ANSI_RESET);
+			ps.println(Utils.ANSI_YELLOW_BOLD + "3 - SALIR" + Utils.ANSI_RESET);
 
 			int opcion = ejercicios.ej1();
 
 			switch (opcion) {
 			case 1:
-				ps.println("DATOS DEL PRODUCTO \n");
+				ps.println(Utils.ANSI_GREEN_BOLD +"DATOS DEL PRODUCTO \n"+ Utils.ANSI_RESET);
 				ejercicios.ej5();
 				break;
 			case 2:
-				ps.println("PRODUCTOS: \n");
+				ps.println(Utils.ANSI_GREEN_BOLD + "PRODUCTOS: \n"+ Utils.ANSI_RESET);
 				
 				Ficheros.mostrarEnConsola();
 				break;
 			case 3:
-				ps.println("Saliendo");
+				ps.println(Utils.ANSI_RED_BOLD + "Saliendo"+ Utils.ANSI_RESET);
 				continuar = false;
 				break;
 			default:
-				ps.println("Opción incorrecta, ingrese otra opcion.");
+				ps.println(Utils.ANSI_RED_BOLD + "Opción incorrecta, ingrese otra opcion." + Utils.ANSI_RESET);
 				break;
 			}				
 		}
