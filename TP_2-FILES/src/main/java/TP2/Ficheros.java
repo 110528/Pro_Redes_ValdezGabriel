@@ -13,30 +13,29 @@ import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 
 public class Ficheros {
-	
+
 	public static PrintStream ps;
 	static File archivo = new File("inventarioo.dat");
-		
-	{	try {
-			ps = new PrintStream ( new FileOutputStream("inventarioo.dat" , true) );
-			Ficheros.ps.close();
+
+	{
+		try {
+			ps = new PrintStream(new FileOutputStream("inventarioo.dat", true));
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	public static void mostrarEnConsola() {
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                System.out.println(linea);
-            }
-        } catch (IOException e) {
-            System.out.println("Archivo no encontrado.");
-        }
-    }
-	
-}
 
+	public static void mostrarEnConsola() {
+		try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+			String linea;
+			while ((linea = br.readLine()) != null) {
+				System.out.println(linea);
+			}
+			br.close();
+		} catch (IOException e) {
+			System.out.println("El archivo no se ah encontrado.");
+		}
+	}
+
+}
