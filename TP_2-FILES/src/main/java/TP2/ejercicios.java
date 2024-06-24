@@ -1,281 +1,139 @@
 package TP2;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 
 public class ejercicios {
+	
+	static PrintStream ps = new PrintStream(System.out);
+	static boolean continuar = true;
+	
+	
+	
+	static int ej1() {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		int op = 0;
+		boolean entradaValida = false;
 
-		
-
-		static PrintStream ps = new PrintStream(System.out);
-
-		static boolean continuar = true;
-
-		
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-
-
-
-		static int PT1_leerOpcion() {
-
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-			int opcion = 0;
-
-			boolean entradaValida = false;
-
-
-
-			while (!entradaValida) {
-
-				ps.println("Ingrese la opción:");
-
-				try {
-
-					String input = reader.readLine();
-
-					opcion = Integer.parseInt(input);
-
-
-
-					if (opcion >= 0) {
-
-						entradaValida = true;
-
-					} else {
-
-						ps.println("Error: Por favor, ingrese un número entero positivo.");
-
-					}
-
-				} catch (NumberFormatException | IOException e) {
-
-					ps.println("Error: Por favor, ingrese un número entero válido.");
-
-				}
-
-			}
-
-
-
-			return opcion;
-
-		}
-
-		
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-
-
-
-		static String PUNTO2_leerDatos() {
-
-			String cadena = "";
-
+		while (!entradaValida) {
+			ps.println("Ingrese una opción:");
 			try {
+				String input = reader.readLine();
+				op = Integer.parseInt(input);
 
-				int Byte = -1;
-
-				while(    (Byte = System.in.read())  != '\n'    ) 
-
-				{
-
-					if( Byte != 13 )
-
-						cadena += (char)Byte;
-
+				if (op >= 0) {
+					entradaValida = true;
+				} else {
+					ps.println("Error: ingrese un número entero positivo.");
 				}
-
-				
-
-			} catch (IOException e) {
-
-				e.printStackTrace();
-
+			} catch (NumberFormatException | IOException e) {
+				ps.println("Error: ingrese un número entero válido.");
 			}
-
-			
-
-			return cadena;
-
 		}
 
-		
-
-
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-
-	    
-
-		 static String PUNTO3_verificarTipoDato() {
-
-		        ps.println("Ingrese un dato: ");
-
-		        String dato = PUNTO2_leerDatos();
-
-
-
-		        // Intentar convertir a entero
-
-		        try {
-
-		            Integer.parseInt(dato);
-
-		            return "Entero";
-
-		        } catch (NumberFormatException excepcion1) {
-
-		            // Si no se puede convertir a entero, intentar convertir a float
-
-		            try {
-
-		                Float.parseFloat(dato);
-
-		                return "Número con coma (float)";
-
-		            } catch (NumberFormatException excepcion2) {
-
-		                // Si no se puede convertir a float, es un String
-
-		                return "String";
-
-		            }
-
-		        }
-
-		    }
-
-		 
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-
-		 
-
-		 static int PUNTO4_convertirStrAInt(int num) {
-
-		        ps.println("Ingrese texto (con valor numerico entero)");
-
-		        String texto = PUNTO2_leerDatos();
-
-		
-
-		        int numeroEntero = Integer.parseInt(texto);
-
-		        ps.println("El numero " + numeroEntero + " ahora es de tipo entero");
-
-		        return numeroEntero; // Devolver como string el número entero convertido
-
-		        
-
-		    }  
-
-		        
-
-		 static float PUNTO4_convertirStrAFloat() {
-
-		        ps.println("Ingrese texto (con valor numerico con coma)");
-
-		        String texto = PUNTO2_leerDatos();
-
-		
-
-		        float numeroFloat = Float.parseFloat(texto);
-
-		        ps.println("El numero " + numeroFloat + " ahora es de tipo entero");
-
-		        return numeroFloat;
-
-		        
-
-		    } 
-
-		 
-
-		 public static void PUNTO4_convertToAscii() {
-
-		        ps.println("Ingrese la palabra para convertir a ASCII: ");
-
-		        String palabra = PUNTO2_leerDatos();
-
-
-
-		        StringBuilder asciiValues = new StringBuilder();
-
-
-
-		        for (int i = 0; i < palabra.length(); i++) {
-
-		            char character = palabra.charAt(i);
-
-		            int asciiValue = (int) character;
-
-		            asciiValues.append(asciiValue);
-
-
-
-		            if (i < palabra.length() - 1) {
-
-		                asciiValues.append(", ");
-
-		            }
-
-		        }
-
-
-
-		        ps.println("La palabra '" + palabra + "' convertida a ASCII es: " + asciiValues.toString());
-
-		    }
-
-		
-
-		 
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
-
-
-
-		 static void PUNTO5_productos() { //Pedirle al usuario que ingrese: Nombre de producto, Precio de Compra, Precio de Venta y Stock
-
-			 ps.println("Ingrese nombre del producto: ");
-
-			 String nombre = PUNTO2_leerDatos();
-
-			 
-
-			 ps.println("Ingrese precio de compra del producto: ");
-
-			 String dato = PUNTO2_leerDatos();
-
-			 float precio_compra = Float.parseFloat(dato);
-
-			 
-
-			 ps.println("Ingrese precio de venta del producto: ");
-
-			 String dato2 = PUNTO2_leerDatos();
-
-			 float precio_venta = Float.parseFloat(dato2);
-
-			 
-
-			 ps.println("Ingrese stock del producto: ");
-
-			 String dato3 = PUNTO2_leerDatos();
-
-			 int cant_stock = Integer.parseInt(dato3);
-
-			 
-
-		 }
-
-		 
-
+		return op;
 	}
+	
+	
+	static String ej2() {
+		String cadena = "";
+		try {
+			int Byte = -1;
+			while(    (Byte = System.in.read())  != '\n'    ) 
+			{
+				if( Byte != 13 )
+					cadena += (char)Byte;
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return cadena;
+	}
+	
+  
+	 static String ej3() {
+	        ps.println("Ingrese un dato: ");
+	        String dato = ej2();
+	        
+	        try {
+	            Integer.parseInt(dato);
+	            return "Entero";
+	        } catch (NumberFormatException ex1) {
+	            try {
+	                Float.parseFloat(dato);
+	                return "Número con coma";
+	            } catch (NumberFormatException ex2) {
+	                return "String";
+	            }
+	        }
+	    }
+	 
+	 
+	 static int ej4Int(int num) {
+	        ps.println("Ingrese texto");
+	        String texto = ej2();
+	
+	        int nroEntero = Integer.parseInt(texto);
+	        ps.println("Enteo: " + nroEntero );
+	        return nroEntero;
+	        
+	    }  
+	        
+	 static float ej4Float() {
+	        ps.println("Ingrese texto (con valor numerico con coma)");
+	        String texto = ej2();
+	
+	        float nroFloat = Float.parseFloat(texto);
+	        ps.println("Float: " + nroFloat);
+	        return nroFloat;
+	        
+	    } 
+	
 
-
+	 static void ej5() { 
+		 
+		 String nombre = "";
+		 float pcompra = 0;
+		 float pventa = 0;
+		 int cant_stock = 0;
+		 
+		 ps.println("Ingrese nombre del producto: ");
+		 nombre = ej2();
+		 
+		 ps.println("Ingrese precio de compra: ");
+		 String d1 = ej2();
+		 pcompra = Float.parseFloat(d1);
+		 
+		 ps.println("Ingrese precio de venta: ");
+		 String d2 = ej2();
+		 pventa = Float.parseFloat(d2);
+		 
+		 ps.println("Ingrese la cantidad de stock: ");
+		 String d3 = ej2();
+		 cant_stock = Integer.parseInt(d3); 
+	 
+	 
+	 
+	
+		 	Ficheros.ps.println("Nombre del producto: " + nombre);
+	        Ficheros.ps.println("Precio de compra: " + pcompra);
+	        Ficheros.ps.println("Precio de venta: " + pventa);
+	        Ficheros.ps.println("Stock: " + cant_stock);
+	        Ficheros.ps.println();
+	        Ficheros.ps.flush();
+	        //ps.close();
+		 
+	 }
+	 
+}
+	 
+	
+	
+	
+	
 
