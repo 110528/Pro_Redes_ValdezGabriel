@@ -37,7 +37,6 @@ public class Ejercicio {
 				ps.println();
 				ps.println("2:");
 				ps.println();
-				
 
 				break;
 
@@ -46,9 +45,9 @@ public class Ejercicio {
 				ps.println("Datos tuti");
 				ps.println();
 				mostrarTuti();
-				
+
 				break;
-				
+
 			case "4":
 				ps.println();
 				ps.println("Saliendo...");
@@ -56,11 +55,12 @@ public class Ejercicio {
 				return;
 			default:
 				ps.println("Opción inválida. Intente nuevamente.");
+
 			}
 		}
 	}
 
-	// Método que permita leer texto de la consola y devolverlo como String
+	
 	public String entradaDeDatos() {
 		String cadena = "";
 		try {
