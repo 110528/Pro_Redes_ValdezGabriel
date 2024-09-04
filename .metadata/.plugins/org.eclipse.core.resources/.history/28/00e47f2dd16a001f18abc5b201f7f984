@@ -1,0 +1,36 @@
+package Banco;
+
+import java.util.Random;
+
+public class Transferencias extends Thread{
+	
+	private Banco banco;
+	private int cuenta;
+	private int monto;
+	private Random rand;
+	
+	public Transferencias(Banco banco , int cuentaOrigen , int monto )
+	{
+		
+		this.banco = banco;
+		this.cuenta = cuentaOrigen;
+		this.monto = monto;
+		
+	}
+	
+	@Override
+	
+	public void run()
+	{
+		int cuentaDestino = rand.nextInt(100);
+				
+				while(cuenta == cuentaDestino)
+				{
+					cuentaDestino = rand.nextInt(100);
+				}
+				
+				banco.transferir( cuenta , cuentaDestino , this.monto );
+				Thread.sleep( rand.nextInt(100) );
+	}
+		
+	}

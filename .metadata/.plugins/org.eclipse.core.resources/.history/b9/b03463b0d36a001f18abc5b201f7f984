@@ -1,0 +1,31 @@
+package Banco;
+
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Banco {
+	private Map<Integer, Integer> cuentas;
+	private PrintStream ps = new PrintStream(System.out);
+	private Lock cierreDeBanco = new ReentrantLock();
+	private Condition saldoSuficiente;
+
+	public Banco(int cantCuentas, int montoInicial) {
+		
+		cuentas = new HashMap<>();
+
+		for (int nro = 0; nro < cantCuentas; nro++) {
+
+			cuentas.put(nro, montoInicial);
+
+		}
+
+	}
+
+	public void transferir(int cuentaOrigen, int cuentaDestino, int monto) {
+
+	}
+
+}

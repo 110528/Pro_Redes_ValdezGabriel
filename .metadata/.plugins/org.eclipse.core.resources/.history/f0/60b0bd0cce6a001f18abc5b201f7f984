@@ -1,0 +1,17 @@
+package Banco;
+
+public class Transferencias extends Thread{
+	
+	public Transferencias(Banco banco , int cuentaOrigen , int monto )
+	{
+		
+	}
+	
+	@Override
+	
+	public void run()
+	{
+		
+	}
+
+}

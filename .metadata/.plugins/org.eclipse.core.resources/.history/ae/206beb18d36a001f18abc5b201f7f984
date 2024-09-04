@@ -1,0 +1,21 @@
+package Banco;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+public class Banco{
+	private Map<Integer,Integer> cuentas;
+	
+	public Banco(int cantCuentas, int montoInicial)
+	{
+		
+		
+		
+	}
+	
+	public void transferir(int cuentaOrigen, int cuentaDestino, int monto)
+	{
+		
+	}
+
+}

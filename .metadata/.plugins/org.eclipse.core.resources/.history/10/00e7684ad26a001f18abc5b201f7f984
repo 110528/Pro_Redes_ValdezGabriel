@@ -1,0 +1,18 @@
+package Banco;
+
+import java.util.ArrayList;
+
+public class Banco{
+	private ArrayList<Integer> cuentas;
+	
+	public Banco(int cantCuentas, int montoInicial)
+	{
+		
+	}
+	
+	public void transferir(int cuentaOrigen, int cuentaDestino, int monto)
+	{
+		
+	}
+
+}

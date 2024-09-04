@@ -1,0 +1,13 @@
+package Banco;
+
+public class main {
+
+	public static void main(String[] args) {
+
+		
+		Banco nacion = new Banco( 100 , 5000 );
+		
+	
+	}
+
+}

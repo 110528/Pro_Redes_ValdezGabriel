@@ -1,0 +1,28 @@
+package Banco;
+
+public class Transferencias extends Thread{
+	
+	private Banco banco;
+	private int cuentaOrigen;
+	private int monto;
+	Random rand;
+	
+	public Transferencias(Banco banco , int cuentaOrigen , int monto )
+	{
+		
+		this.banco = banco;
+		this.cuenta = cuentaOrigen;
+		this.monto = monto;
+		
+	}
+	
+	@Override
+	
+	public void run()
+	{
+		Random rand = new Random(System.currentTimeMillis());
+		cuentaDestino = 
+		
+	}
+		
+	}
